@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/bootstrap.min.css">
+        <link rel="stylesheet" href="style/icon-font.min.css">
+        <link rel="stylesheet" href="style/main.css">
+        <link rel="stylesheet" href="style/charmsbar.css">
+        <style>
+            html, body {
+                background-color:black;
+                overflow: hidden;
+            }
+            @font-face {
+                font-family: 'biosfont';
+                src: url(bios/biosfont.ttf);
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <section class="nocursor">
+            <div class="bootani" style="width: 100vw; height: 100vh;">
+                <div class="cont">
+                    <img src="img/boot.png" alt="">
+                    <div class="space"></div>
+                    <div id="spinner" class='progress-ring' style="transform: scale(0.6,0.6);">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <style>
+            .space {
+                height: 236px;
+            }
+
+            .bootani .cont {
+                position: fixed;
+                top: 50vh;
+                left: 50vw;
+                margin-top: -190px;
+                margin-left: -62px;
+            }
+
+            #spinner {
+                display: none
+            }
+
+            @keyframes opacityani {
+                0% {
+                    opacity: 1;
+                }
+
+                100% {
+                    opacity: 0;
+                }
+            }
+        </style>
+        <script src="script/jquery.js"></script>
+        <script src="script/metro.js"></script>
+        <script>
+            setTimeout(function () {
+                document.getElementById('spinner').style.display = "block"
+                setTimeout(() => {
+                    $('.bootani > .cont').css('animation','opacityani 0.25s ease forwards')
+                    setTimeout(() => {
+                        window.location.href = "setup.html"
+                    }, 250);
+                }, 9000);
+            }, 3700);
+        </script>
+    </body>
+</html>
